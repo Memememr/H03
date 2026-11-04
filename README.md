@@ -21,24 +21,6 @@ The experiments use a simplified inventory database based on the Sakila database
 - mysql-connector-python
 - Python Threading
 
-## Project Structure
-
-```text
-isolation-levels/
-│
-├── schema.sql
-├── test_env.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-│
-└── dirty_read/
-    ├── dirty_read_ru.py
-    ├── dirty_read_rc.py
-    ├── dirty_read_rr.py
-    └── dirty_read_sz.py
-```
-
 ## Prerequisites
 
 Before running the experiments, make sure you have:
