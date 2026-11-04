@@ -1,0 +1,66 @@
+# ==========================================
+# Python
+# ==========================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# ==========================================
+# Environment Variables & Credentials
+# ==========================================
+
+.env
+.env.*
+!.env.example
+
+# Local database configuration
+test_env.local.py
+
+# ==========================================
+# IDE & Editor
+# ==========================================
+
+.vscode/
+.idea/
+
+# ==========================================
+# Operating System
+# ==========================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# Logs & Temporary Files
+# ==========================================
+
+*.log
+*.tmp
+*.bak
+
+# ==========================================
+# Testing & Coverage
+# ==========================================
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==========================================
+# Jupyter Notebook
+# ==========================================
+
+.ipynb_checkpoints/
