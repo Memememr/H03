@@ -104,6 +104,11 @@ Replace `YOUR_MYSQL_PASSWORD` with your own MySQL password.
 
 Run the Python scripts from the project's root directory.
 
+**Example**
+```bash
+python -m dirty_read.dirty_read_ru
+```
+
 ## Dirty Read Experiment
 
 Each experiment uses two independent MySQL database connections.
