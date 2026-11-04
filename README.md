@@ -38,12 +38,6 @@ Clone the repository to your local machine:
 git clone <repository-url>
 ```
 
-Navigate to the project directory:
-
-```bash
-cd isolation-levels
-```
-
 ## 2. Set Up a Virtual Environment (Recommended)
 
 Create a Python virtual environment:
