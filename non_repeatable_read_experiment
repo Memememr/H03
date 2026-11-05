@@ -1,0 +1,53 @@
+import threading
+import time
+
+from test_env import get_connection
+
+
+# ============================================================
+# CONFIGURATION
+# Change this value in each of the four scripts.
+# ============================================================
+
+ISOLATION_LEVEL = "READ UNCOMMITTED"
+
+ORIGINAL_QUANTITY = 10
+UPDATED_QUANTITY = 50
+
+writer_updated = threading.Event()
+reader_attempting = threading.Event()
+reader_finished = threading.Event()
+
+writer_error = []
+
+start_time = time.monotonic()
+
+
+def log(message):
+    elapsed = time.monotonic() - start_time
+    print(f"[{elapsed:6.2f}s] {message}", flush=True)
+
+
+def get_quantity():
+    """Read the current quantity using a separate connection."""
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    try:
+        cursor.execute("""
+            SELECT quantity
+            FROM inventory_test
+            WHERE item_id = 1
+        """)
+
+        result = cursor.fetchone()
+
+        if result is None:
+            raise RuntimeError("Item with item_id = 1 was not found.")
+
+        return result[0]
+
+    finally:
+        cursor.close()
+        connection.close()
